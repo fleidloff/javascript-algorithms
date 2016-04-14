@@ -1,1 +1,1 @@
-node --es_staging --harmony-destructuring index.js
+node --es_staging --harmony-destructuring --harmony_default_parameters index.js

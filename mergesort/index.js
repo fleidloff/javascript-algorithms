@@ -27,9 +27,7 @@ function mergeSort(l) {
     return merge(mergeSort(l.left()), mergeSort(l.right()));
 }
 
-function merge(l, r, result) {
-    result = result || [];
-
+function merge(l, r, result = []) {
     switch(true) {
         case l.isEmpty() || r.isEmpty():
             return result.concat(l).concat(r);
