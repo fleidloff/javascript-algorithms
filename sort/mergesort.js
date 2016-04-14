@@ -1,3 +1,5 @@
+// node --harmony-destructuring --harmony_default_parameters sort/mergesort.js
+
 require("../Array.addons.js");
 
 const list = [6, 4, 7, 9, 11, -4, 5, 2, 5, 90];
@@ -20,4 +22,3 @@ function merge(left, right, result = []) {
             return merge(left, right.tail(), result.concat(right.head()));
     }
 }
-
