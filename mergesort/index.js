@@ -27,22 +27,17 @@ function mergeSort(l) {
     return merge(mergeSort(l.left()), mergeSort(l.right()));
 }
 
-function merge(l, r ) {
-    const result = [];
+function merge(l, r, result) {
+    result = result || [];
 
-    while(!l.isEmpty() && !r.isEmpty()) {
-        switch(true) {
-            case l.head() <= r.head():
-                result.push(l.head());
-                l = l.tail();
-                break;
-            default:
-                result.push(r.head());
-                r = r.tail();
-        }
+    switch(true) {
+        case l.isEmpty() || r.isEmpty():
+            return result.concat(l).concat(r);
+        case l.head() <= r.head():
+            return merge(l.tail(), r, result.concat(l.head()));
+        default:
+            return merge(l, r.tail(), result.concat(r.head()));
     }
-
-    return result.concat(l).concat(r);;
 }
 
 console.log(mergeSort(list));
