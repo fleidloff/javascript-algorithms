@@ -30,9 +30,9 @@ function mergeSort(l) {
 function merge(l, r ) {
     const result = [];
 
-    while(!l.isEmpty() || !r.isEmpty()) {
+    while(!l.isEmpty() && !r.isEmpty()) {
         switch(true) {
-            case r.isEmpty() || (!l.isEmpty() && l.head() <= r.head()):
+            case l.head() <= r.head():
                 result.push(l.head());
                 l = l.tail();
                 break;
@@ -41,8 +41,8 @@ function merge(l, r ) {
                 r = r.tail();
         }
     }
-    
-    return result;
+
+    return result.concat(l).concat(r);;
 }
 
 console.log(mergeSort(list));
