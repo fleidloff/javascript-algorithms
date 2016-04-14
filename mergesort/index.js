@@ -27,26 +27,19 @@ function mergeSort(l) {
     return merge(mergeSort(l.left()), mergeSort(l.right()));
 }
 
-function merge(l, r) {
+function merge(l, r ) {
     const result = [];
-    while(!l.isEmpty() && !r.isEmpty()) {
-        if (l.head() <= r.head()) {
-            result.push(l.head());
-            l = l.tail();
-        } else {
-            result.push(r.head());
-            r = r.tail();
-        }  
-    }
-    
-    while(!l.isEmpty()) {
-        result.push(l.head());
-        l = l.tail();
-    }
 
-    while(!r.isEmpty()) {
-        result.push(r.head());
-        r = r.tail();
+    while(!l.isEmpty() || !r.isEmpty()) {
+        switch(true) {
+            case r.isEmpty() || (!l.isEmpty() && l.head() <= r.head()):
+                result.push(l.head());
+                l = l.tail();
+                break;
+            default:
+                result.push(r.head());
+                r = r.tail();
+        }
     }
     
     return result;
