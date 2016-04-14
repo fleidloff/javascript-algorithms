@@ -5,44 +5,21 @@ require("../Array.addons.js");
 console.log(quicksort([6, 4, 7, 9, 11, -4, 5, 2, 5, 90]));
 
 
-function quicksort2(items, left = 0, right = items.length -1) {
-   var index;
-    switch(true) {
-       case !items.tail().isEmpty():
-           index = partition(items, left, right);
-           if (left < index - 1) {
-               return quicksort(items, left, index - 1);
-           }
-
-           if (index < right) {
-               return quicksort(items, index, right);
-           }
-           
-           break;
-       default:
-           return items;
-   } 
-}
-
-function quicksort(items, left, right) {
+function quicksort(items, left = 0, right = items.length -1) {
     var index;
-    if (items.length > 1) {
-        left = typeof left != "number" ? 0 : left;
-        right = typeof right != "number" ? items.length - 1 : right;
-
-        index = partition(items, left, right);
-
-        if (left < index - 1) {
-            quicksort(items, left, index - 1);
-        }
-
-        if (index < right) {
-            quicksort(items, index, right);
-        }
-
+    if(!items.tail().isEmpty()) {
+       index = partition(items, left, right);
+       if (left < index - 1) {
+           quicksort(items, left, index - 1);
+       }
+    
+       if (index < right) {
+           quicksort(items, index, right);
+       }
     }
-
+    
     return items;
+    
 }
 
 
