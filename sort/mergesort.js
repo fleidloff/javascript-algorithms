@@ -2,14 +2,13 @@
 
 require("../Array.addons.js");
 
-const list = [6, 4, 7, 9, 11, -4, 5, 2, 5, 90];
-console.log(mergeSort(list));
+console.log(mergeSort([6, 4, 7, 9, 11, -4, 5, 2, 5, 90]));
 
-function mergeSort(arr) {
-    if (arr.tail().isEmpty()) {
-        return arr;
+function mergeSort(items) {
+    if (items.tail().isEmpty()) {
+        return items;
     }
-    return merge(mergeSort(arr.left()), mergeSort(arr.right()));
+    return merge(mergeSort(items.left()), mergeSort(items.right()));
 }
 
 function merge(left, right, result = []) {
