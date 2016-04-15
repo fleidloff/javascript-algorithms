@@ -19,10 +19,7 @@ Array.prototype.right = function() {
 };
 
 Array.prototype.insert = function(item, pos = 0) {
-    if (pos < 0) {
-        pos = this.length;
-    }
-    this.splice(pos, 0, item);
+    this.splice(pos >=0 ? pos : this.length, 0, item);
     return this;
 }
 
@@ -42,5 +39,5 @@ Array.prototype.filterOne = function(fun, { returnIndex } = {}) {
         }
       }
     }
-    return -1;
+    return returnIndex ? -1 : undefined;
 };
