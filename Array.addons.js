@@ -17,3 +17,8 @@ Array.prototype.left = function() {
 Array.prototype.right = function() {
     return this.slice(this.length / 2, this.length);
 };
+
+Array.prototype.insert = function(item, pos = 0) {
+    this.splice(pos, 0, item);
+    return this;
+}

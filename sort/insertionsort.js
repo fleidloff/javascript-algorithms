@@ -9,14 +9,11 @@ function insertionsort(items, result = []) {
     if (items.isEmpty()) {
         return result;
     }
-
-    let pos = 0;
-    for(let i = 0; i < result.length; i++) {
-        if (items.head() >= result[i]) {
-            pos = i;
-        }
-    }
+    let pos;
+    pos = result.some((el, idx) => {
+        pos=idx;
+        return el > items.head();
+    }) ? pos : result.length;
     
-    result.splice(pos, 0, items.head());
-    return insertionsort(items.tail(), result);
+    return insertionsort(items.tail(), result.insert(items.head(), pos));
 }
