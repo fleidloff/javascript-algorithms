@@ -25,3 +25,22 @@ Array.prototype.insert = function(item, pos = 0) {
     this.splice(pos, 0, item);
     return this;
 }
+
+Array.prototype.filterOne = function(fun, { returnIndex } = {}) {
+    var t = Object(this);
+    var len = t.length >>> 0;
+    if (typeof fun !== 'function') {
+      throw new TypeError();
+    }
+
+    var thisArg = arguments.length >= 2 ? arguments[1] : void 0;
+    for (var i = 0; i < len; i++) {
+      if (i in t) {
+        var val = t[i];
+        if (fun.call(thisArg, val, i, t)) {
+          return returnIndex ? i : val;
+        }
+      }
+    }
+    return -1;
+};

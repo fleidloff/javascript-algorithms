@@ -10,9 +10,7 @@ function insertionsort(items, result = []) {
         return result;
     }
 
-    const pos = result.indexOf(
-        Math.min(...result.filter(r => r > items.head()))
-    );
-    
+    const pos = result.filterOne(r => r > items.head(), {returnIndex: true});
+
     return insertionsort(items.tail(), result.insert(items.head(), pos));
 }
