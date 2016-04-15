@@ -22,3 +22,11 @@ Array.prototype.insert = function(item, pos = 0) {
     this.splice(pos, 0, item);
     return this;
 }
+
+Number.map = function(n, cb, fb) {
+  return cb(n) ? fb : n;
+}
+
+Number.negative = function(n) {
+    return n < 0;
+}
