@@ -10,14 +10,8 @@ function insertionsort(items, result = []) {
         return result;
     }
 
-    const pos = Number.map(
-        result.indexOf(
-            Math.min(
-                ...result.filter(r => r > items.head())
-            )
-        ), 
-        Number.negative, 
-        result.length
+    const pos = result.indexOf(
+        Math.min(...result.filter(r => r > items.head()))
     );
     
     return insertionsort(items.tail(), result.insert(items.head(), pos));
