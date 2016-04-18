@@ -24,20 +24,23 @@ Array.prototype.insert = function(item, pos = 0) {
 }
 
 Array.prototype.filterOne = function(fun, { returnIndex } = {}) {
-    var t = Object(this);
-    var len = t.length >>> 0;
-    if (typeof fun !== 'function') {
-      throw new TypeError();
-    }
-
-    var thisArg = arguments.length >= 2 ? arguments[1] : void 0;
-    for (var i = 0; i < len; i++) {
-      if (i in t) {
-        var val = t[i];
-        if (fun.call(thisArg, val, i, t)) {
-          return returnIndex ? i : val;
+    for (var i = 0; i < this.length; i++) {
+        if (fun(this[i])) {
+          return returnIndex ? i : this[i];
         }
-      }
     }
     return returnIndex ? -1 : undefined;
+};
+
+Array.prototype.filterLeftRight = function(fun) {
+    const left = [];
+    const right = [];
+    for (var i = 0; i < this.length; i++) {
+        if (fun(this[i])) {
+            left.push(this[i]);
+        } else {
+            right.push(this[i]);
+        }
+    }
+    return { left, right };
 };
