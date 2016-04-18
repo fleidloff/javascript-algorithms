@@ -44,3 +44,8 @@ Array.prototype.filterLeftRight = function(fun) {
     }
     return { left, right };
 };
+
+Array.prototype.swap = function (x, y, arr=this.slice()) {
+    arr[x] = arr.splice(y, 1, arr[x]).head();
+    return arr;
+}
