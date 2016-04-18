@@ -6,6 +6,10 @@ Array.prototype.head = function() {
     return this[0] || null;
 };
 
+Array.prototype.last = function() {
+    return this[this.length - 1] || null;
+};
+
 Array.prototype.tail = function() {
     return this.length > 1 ? this.slice(1) : [];
 };
