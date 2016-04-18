@@ -5,7 +5,7 @@ require("../Array.addons.js");
 
 console.log(bubblesort([6, 4, 7, 9, 11, -4, 5, 2, 5, 90]));
 
-function bubblesort(items, i=items.length) {
+function bubblesort(items, i = items.length) {
     if (items.tail().isEmpty()) {
         return items;
     }
