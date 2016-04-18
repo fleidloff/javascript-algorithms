@@ -12,7 +12,7 @@ function selectionsort(items, i=items.length) {
 
     while(i --> 1) {
         if (items[i] < items.head()) {
-            items.swap(i, 0, items);
+            items.swap(i, 0);
         }
     }
 

@@ -1,3 +1,4 @@
+"use strict";
 Array.prototype.isEmpty = function() {
     return this.length === 0;
 };
@@ -49,7 +50,23 @@ Array.prototype.filterLeftRight = function(fun) {
     return { left, right };
 };
 
-Array.prototype.swap = function (x, y, arr=this.slice()) {
-    arr[x] = arr.splice(y, 1, arr[x]).head();
-    return arr;
+Array.prototype.swap = function (x, y) {
+    this[x] = this.splice(y, 1, this[x]).head();
+    return this;
+}
+
+Array.prototype.shuffle = function shuffle() {
+    for (let i = this.length; i > 0; i -= 1) {
+        this.swap(i-1, Math.floor(Math.random() * i));
+    }
+    return this;
+}
+
+Array.prototype.isSorted = function() {
+    for(let i = 0; i < this.length-1; i++) {
+        if (this[i] > this[i+1]) {
+            return false;
+        }
+    }
+    return true;
 }

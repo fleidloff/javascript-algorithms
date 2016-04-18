@@ -12,7 +12,7 @@ function bubblesort(items, i=items.length) {
 
     while(i --> 1) {
         if (items[i] < items[i-1]) {
-            items = items.swap(i, i-1);
+            items.swap(i, i-1);
         }
     }
 
