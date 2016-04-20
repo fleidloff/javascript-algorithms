@@ -4,15 +4,13 @@ Array.prototype.isEmpty = function() {
 };
 
 Array.prototype.head = function() {
-    return this[0] || null;
-};
-
-Array.prototype.last = function() {
-    return this[this.length - 1] || null;
+    const [ head, ..._ ] = this;
+    return head || undefined;
 };
 
 Array.prototype.tail = function() {
-    return this.length > 1 ? this.slice(1) : [];
+    const [ _, ...tail ] = this;
+    return tail || [];
 };
 
 Array.prototype.left = function() {
@@ -27,15 +25,6 @@ Array.prototype.insert = function(item, pos = 0) {
     this.splice(pos >=0 ? pos : this.length, 0, item);
     return this;
 }
-
-Array.prototype.filterOne = function(fun, { returnIndex } = {}) {
-    for (var i = 0; i < this.length; i++) {
-        if (fun(this[i])) {
-          return returnIndex ? i : this[i];
-        }
-    }
-    return returnIndex ? -1 : undefined;
-};
 
 Array.prototype.filterLeftRight = function(fun) {
     const left = [];

@@ -10,7 +10,7 @@ function insertionsort(items, result = []) {
         return result;
     }
 
-    const pos = result.filterOne(r => r > items.head(), {returnIndex: true});
+    const pos = result.findIndex(r => r > items.head());
 
     return insertionsort(items.tail(), result.insert(items.head(), pos));
 }
