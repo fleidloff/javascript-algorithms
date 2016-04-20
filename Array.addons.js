@@ -42,14 +42,14 @@ Array.prototype.filterLeftRight = function(fun) {
 Array.prototype.swap = function (x, y) {
     this[x] = this.splice(y, 1, this[x]).head();
     return this;
-}
+};
 
 Array.prototype.shuffle = function shuffle() {
     for (let i = this.length; i > 0; i -= 1) {
         this.swap(i-1, Math.floor(Math.random() * i));
     }
     return this;
-}
+};
 
 Array.prototype.isSorted = function() {
     for(let i = 0; i < this.length-1; i++) {
@@ -58,4 +58,4 @@ Array.prototype.isSorted = function() {
         }
     }
     return true;
-}
+};
