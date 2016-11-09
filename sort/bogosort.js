@@ -1,6 +1,3 @@
-// node --harmony-destructuring --harmony_default_parameters sort/bogosort.js
-"use strict";
-
 require("../Array.addons.js");
 
 console.log(bogosort([6, 4, 7, 9, -2, 7, 90, 5, 2]));

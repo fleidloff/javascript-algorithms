@@ -1,5 +1,3 @@
-// node --harmony-destructuring --harmony_default_parameters sort/quicksort.js
-
 require("../Array.addons.js");
 
 console.log(quicksort([6, 4, 7, 9, 11, -4, 5, 2, 5, 90]));

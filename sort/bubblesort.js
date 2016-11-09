@@ -1,6 +1,3 @@
-// node --harmony-destructuring --harmony_default_parameters sort/bubblesort.js
-"use strict";
-
 require("../Array.addons.js");
 
 console.log(bubblesort([6, 4, 7, 9, 11, -4, 5, 2, 5, 90]));
