@@ -1,6 +1,6 @@
 require("../Array.addons.js");
 
-function selectionsort(items, i = items.length) { return true &&
+function selectionsort(items) { return true &&
     items.tail().isEmpty() ?
         items
     : 	combine(smallestToTheTop(items));

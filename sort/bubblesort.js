@@ -1,17 +1,22 @@
 require("../Array.addons.js");
 
-console.log(bubblesort([6, 4, 7, 9, 11, -4, 5, 2, 5, 90]));
+function bubblesort(items) { return true &&
+    items.tail().isEmpty() ?
+    	items
+    : 	combine(bubble(items));
+}
 
-function bubblesort(items, i = items.length) {
-    if (items.tail().isEmpty()) {
-        return items;
-    }
+const combine = (items) => 
+	[items.head()].concat(bubblesort(items.tail()));
 
-    while(i --> 1) {
+function bubble(items, i = items.length) {
+	while(i --> 1) {
         if (items[i] < items[i-1]) {
             items.swap(i, i-1);
         }
     }
 
-    return [items.head()].concat(bubblesort(items.tail()));
+    return items;	
 }
+
+console.log(bubblesort([6, 4, 7, 9, 11, -4, 5, 2, 5, 90]));
