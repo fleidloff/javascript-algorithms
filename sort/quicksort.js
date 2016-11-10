@@ -4,8 +4,7 @@ const Y = require("../Y.js");
 const quickSort = Y(() => (items, pivot = items.head()) =>
     items.tail().isEmpty() ?
         items
-    : 	combine(items.tail().filterLeftRight(it => it < pivot), pivot)
-);
+    : 	combine(items.tail().filterLeftRight(it => it < pivot), pivot));
 
 const combine = ({ left, right }, pivot) => 
     quickSort(left).concat(pivot).concat(quickSort(right));
