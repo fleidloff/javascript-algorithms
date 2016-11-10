@@ -1,12 +1,12 @@
 require("../Array.addons.js");
+const Y = require("../Y.js");
 
-function quicksort(items, pivot = items.head()) { return true &&
+const quickSort = Y(() => (items, pivot = items.head()) =>
     items.tail().isEmpty() ?
         items
-    : 	combine(items.tail().filterLeftRight(it => it < pivot), pivot);
-}
+    : 	combine(items.tail().filterLeftRight(it => it < pivot), pivot));
 
 const combine = ({ left, right }, pivot) => 
-    quicksort(left).concat(pivot).concat(quicksort(right));
+    quickSort(left).concat(pivot).concat(quickSort(right));
 
-console.log(quicksort([6, 4, 7, 9, 11, -4, 5, 2, 5, 90]));
+console.log(quickSort([6, 4, 7, 9, 11, -4, 5, 2, 5, 90]));

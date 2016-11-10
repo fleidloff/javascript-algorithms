@@ -62,8 +62,8 @@ Array.prototype.isSorted = function() {
 
 Array.range = function(from, to) {
   return Array.apply(null, {length: to + 1 - from}).map(Number.call, Number).map(it => it + from);
-}
+};
 
 Array.prototype.isArray = function() {
     return true;
-}
+};
