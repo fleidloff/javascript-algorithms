@@ -1,12 +1,12 @@
 require("../Array.addons.js");
 const Y = require("../Y.js");
 
-const mergeSort = Y(() => (items) =>
+const mergeSort = Y((items) =>
     items.tail().isEmpty() ?
         items 
     :   merge(mergeSort(items.left()), mergeSort(items.right())));
 
-const merge = Y(() => (left, right, result = []) =>
+const merge = Y((left, right, result = []) =>
     left.isEmpty() || right.isEmpty() ?
         result.concat(left).concat(right) :
     left.head() <= right.head() ?  

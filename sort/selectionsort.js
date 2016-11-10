@@ -1,7 +1,7 @@
 require("../Array.addons.js");
 const Y = require("../Y.js");
 
-const selectionSort = Y(() => (items) =>
+const selectionSort = Y((items) =>
     items.tail().isEmpty() ?
         items
     : 	combine(smallestToTheTop(items)));

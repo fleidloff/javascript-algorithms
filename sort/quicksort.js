@@ -1,7 +1,7 @@
 require("../Array.addons.js");
 const Y = require("../Y.js");
 
-const quickSort = Y(() => (items, pivot = items.head()) =>
+const quickSort = Y((items, pivot = items.head()) =>
     items.tail().isEmpty() ?
         items
     : 	combine(items.tail().filterLeftRight(it => it < pivot), pivot));

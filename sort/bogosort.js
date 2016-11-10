@@ -3,7 +3,7 @@
 require("../Array.addons.js");
 const Y = require("../Y.js");
 
-const bogoSort = Y(() => (items) =>
+const bogoSort = Y((items) =>
 	items.isSorted() ?
         items
     :   bogoSort(items.shuffle()));

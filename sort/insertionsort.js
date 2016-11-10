@@ -2,7 +2,7 @@ require("../Array.addons.js");
 const Y = require("../Y.js");
 
 
-const insertionSort = Y(() => (items, result = []) =>
+const insertionSort = Y((items, result = []) =>
     items.isEmpty() ?
         result
     : 	insertionSort(items.tail(), result.insert(items.head(), result.findIndex(r => r > items.head()))));
