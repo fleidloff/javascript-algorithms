@@ -4,7 +4,8 @@ const Y = require("../Y.js");
 const selectionSort = Y(() => (items) =>
     items.tail().isEmpty() ?
         items
-    : 	combine(smallestToTheTop(items)));
+    : 	combine(smallestToTheTop(items))
+);
 
 const combine = (items) => 
 	[items.head()].concat(selectionSort(items.tail()));

@@ -4,7 +4,8 @@ const Y = require("../Y.js");
 const bubblesort = Y(() => (items) =>
     items.tail().isEmpty() ?
     	items
-    : 	combine(bubble(items)));
+    : 	combine(bubble(items))
+);
 
 const combine = (items) => 
 	[items.head()].concat(bubblesort(items.tail()));
