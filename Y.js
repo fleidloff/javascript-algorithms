@@ -1,10 +1,3 @@
-var Y = function (F) {
-    return (function (x) {
-        return F(function (y) { return (x(x))(y);});
-    })
-    (function (x) {
-        return F(function (y) { return (x(x))(y);});
-    }) ;
-} ;
+const Y = (F) => ((x) => F((y) => (x(x))(y)))((x) => F((y) => (x(x))(y)));
 
 module.exports = Y;
