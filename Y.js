@@ -1,5 +1,7 @@
-const Y2 = (F) => ((x) => F((y) => (x(x))(y)))((x) => F((y) => (x(x))(y)));
+const Y1 = (F) => ((x) => F((y) => (x(x))(y)))((x) => F((y) => (x(x))(y)));
 
-const Y = (F) => Y2(() => F);
+const Y2 = (F) => Y1(() => F);
+
+const Y = G => ((F) => ((x) => F((y) => (x(x))(y)))((x) => F((y) => (x(x))(y))))(() => G);
 
 module.exports = Y;
