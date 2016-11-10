@@ -1,10 +1,10 @@
 require("../Array.addons.js");
+const Y = require("../Y.js");
 
-function bubblesort(items) { return true &&
+const bubblesort = Y(() => (items) =>
     items.tail().isEmpty() ?
     	items
-    : 	combine(bubble(items));
-}
+    : 	combine(bubble(items)));
 
 const combine = (items) => 
 	[items.head()].concat(bubblesort(items.tail()));

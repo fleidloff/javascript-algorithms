@@ -1,9 +1,10 @@
 require("../Array.addons.js");
+const Y = require("../Y.js");
 
-console.log(insertionsort([6, 4, 7, 9, 11, -4, 5, 2, 5, 90]));
 
-function insertionsort(items, result = []) { return true &&
+const insertionSort = Y(() => (items, result = []) =>
     items.isEmpty() ?
         result
-    : 	insertionsort(items.tail(), result.insert(items.head(), result.findIndex(r => r > items.head())));
-}
+    : 	insertionSort(items.tail(), result.insert(items.head(), result.findIndex(r => r > items.head()))));
+
+console.log(insertionSort([6, 4, 7, 9, 11, -4, 5, 2, 5, 90]));
