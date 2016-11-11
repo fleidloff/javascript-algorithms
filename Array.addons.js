@@ -4,9 +4,16 @@ Array.prototype.isEmpty = function() {
 };
 
 Array.prototype.head = function() {
-    const [ head, ..._ ] = this;
-    return head || undefined;
+    return this[0] || undefined;
 };
+
+Array.prototype.heads = function() {
+    return this.slice(0, this.length - 1);
+}
+
+Array.prototype.last = function() {
+    return this[this.length - 1];
+}
 
 Array.prototype.tail = function() {
     const [ _, ...tail ] = this;
