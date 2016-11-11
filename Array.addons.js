@@ -31,7 +31,7 @@ Array.prototype.right = function() {
 Array.prototype.insert = function(item, pos = 0) {
     this.splice(pos >=0 ? pos : this.length, 0, item);
     return this;
-}
+};
 
 Array.prototype.filterLeftRight = function(fun) {
     const left = [];
