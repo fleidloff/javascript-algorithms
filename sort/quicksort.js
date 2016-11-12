@@ -7,11 +7,11 @@ const quickSort = Y((items, pivot = items.first()) =>
     :   combine(leftRight(items.rest(), it => it < pivot).concat(pivot)));
 
 const leftRight = (items, condition) =>
-    [condition, not(condition)].map((condition) =>
-            items.filter(condition));
+    I.List.of(condition, not(condition)).map((leftOrRight) =>
+            items.filter(leftOrRight));
 
 const combine = ( [left, right , pivot] ) => 
-    quickSort(left).concat(pivot).concat(quickSort(right));
+    I.List.of(quickSort(left), pivot, quickSort(right)).flatten();
 
 const not = (func) =>
     (...params) => !func(...params);
