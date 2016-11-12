@@ -3,7 +3,7 @@ const I = require("immutable");
 const insertionSort = (items) =>
     items.reduce((memo, item) =>
         memo.insert(memo.push(item).findIndex(r => r >= item), item)
-    , I.List());
+    , new I.List());
 
 const positive = (n) => n < 0 ? 0 : n;
 

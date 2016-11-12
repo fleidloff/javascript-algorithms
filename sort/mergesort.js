@@ -4,7 +4,13 @@ const I = require("immutable");
 const mergeSort = Y((items) =>
     items.rest().isEmpty() ?
         items 
-    :   merge(mergeSort(items.take(items.count()/2)), mergeSort(items.skip(items.count()/2))));
+    :   combine(items));
+
+const combine = (items, half = items.count() / 2) =>
+    merge(
+        mergeSort(items.take(half)), 
+        mergeSort(items.skip(half))
+    );
 
 const merge = Y((left, right, result = new I.List()) => 
     left.isEmpty() || right.isEmpty() ?
