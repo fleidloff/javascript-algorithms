@@ -4,8 +4,8 @@ const I = require("immutable");
 
 const bubblesort = Y((items) =>
     items.rest().isEmpty() ?
-        items
-    : combine(bubble(items)));
+        items :
+        combine(bubble(items)));
 
 const combine = (items) =>
     bubblesort(items.butLast()).push(items.last());

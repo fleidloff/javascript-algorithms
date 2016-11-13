@@ -5,8 +5,8 @@ const I = require("immutable");
 
 const bogoSort = Y((items) =>
     isSorted(items) ?
-        items
-    : bogoSort(shuffle(items)));
+        items :
+        bogoSort(shuffle(items)));
 
 const isSorted = (items) =>
     items.sort().equals(items);

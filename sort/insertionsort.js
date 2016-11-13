@@ -7,7 +7,7 @@ const insertionSort = (items) =>
 
 const findIndex = (items, condition, idx = items.findIndex(condition)) =>
     idx < 0 ?
-        items.count()
-    : idx;
+        items.count() :
+        idx;
 
 console.log(insertionSort(I.fromJS([6, 4, 7, 9, 11, -4, 5, 2, 5, 90])));
