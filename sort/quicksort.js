@@ -4,15 +4,15 @@ const I = require("immutable");
 const quickSort = Y((items, pivot = items.first()) =>
     items.rest().isEmpty() ?
         items
-    :   combine(leftRight(items.rest(), it => it < pivot).concat(pivot)));
+    : combine(leftRight(items.rest(), (it) => it < pivot).concat(pivot)));
 
 const leftRight = (items, condition) =>
     I.List.of(condition, not(condition)).map((leftOrRight) =>
             items.filter(leftOrRight));
 
-const combine = ( [left, right , pivot] ) => 
-    quickSort(left) 
-        .push(pivot) 
+const combine = ([left, right, pivot]) =>
+    quickSort(left)
+        .push(pivot)
         .push(quickSort(right))
         .flatten();
 

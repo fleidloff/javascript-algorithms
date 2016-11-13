@@ -4,7 +4,7 @@ const I = require("immutable");
 const selectionSort = Y((items) =>
     items.rest().isEmpty() ?
         items
-    :   combine(smallestToTheTop(items)));
+    : combine(smallestToTheTop(items)));
 
 const combine = (items) =>
     selectionSort(items.rest()).unshift(items.first());

@@ -21,6 +21,7 @@ extends: [
     "no-console": "off",
     "no-confusing-arrow": "off",
     "arrow-parens": ["error", "always"],
-    "no-use-before-define": "off"
+    "no-use-before-define": "off",
+    "no-nested-ternary": "off"
   }
 }
