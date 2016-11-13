@@ -11,7 +11,11 @@ const leftRight = (items, condition) =>
             items.filter(leftOrRight));
 
 const combine = ( [left, right , pivot] ) => 
-    I.List.of(quickSort(left), pivot, quickSort(right)).flatten();
+    I.List.of(
+        quickSort(left), 
+        pivot, 
+        quickSort(right)
+    ).flatten();
 
 const not = (func) =>
     (...params) => !func(...params);

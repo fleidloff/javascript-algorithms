@@ -8,7 +8,7 @@ const bubblesort = Y((items) =>
     : 	combine(bubble(items)));
 
 const combine = (items) =>
-	bubblesort(items.butLast()).concat([items.last()]);
+	bubblesort(items.butLast()).push(items.last());
 
 // biggest element is bubbled to last position
 const bubble = (items) =>

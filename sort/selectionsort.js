@@ -7,12 +7,15 @@ const selectionSort = Y((items) =>
     : 	combine(smallestToTheTop(items)));
 
 const combine = (items) => 
-	I.List.of(items.first()).concat(selectionSort(items.rest()));
+	selectionSort(items.rest()).unshift(items.first());
 
 const smallestToTheTop = (items) => 
+	toTheTop(items, smallest(items));
+
+const toTheTop = (items, idx) =>
 	items
-		.set(0, items.get(smallest(items)))
-		.set(smallest(items), items.get(0));
+		.set(0, items.get(idx))
+		.set(idx, items.get(0));
 
 const smallest = (items) => 
 	items.reduce((memo, item, idx) => item < items.get(memo) ? idx : memo, 0);
