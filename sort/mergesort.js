@@ -14,10 +14,7 @@ const combine = (items, half = items.count() / 2) =>
 
 const merge = Y((left, right, result = new I.List()) =>
     left.isEmpty() || right.isEmpty() ?
-        result
-            .push(left)
-            .push(right)
-            .flatten() :
+        result.push(left, right).flatten() :
     left.first() <= right.first() ?
         merge(left.rest(), right, result.push(left.first())) :
         merge(left, right.rest(), result.push(right.first())));
