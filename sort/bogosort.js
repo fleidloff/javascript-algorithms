@@ -1,5 +1,5 @@
 // node --harmony sort/bogosort.js
-"use strict";
+"use strict"; // eslint-disable-line
 const Y = require("../Y.js");
 const I = require("immutable");
 

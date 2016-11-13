@@ -5,8 +5,6 @@ const insertionSort = (items) =>
         memo.insert(findIndex(memo, r => r >= item), item)
     , new I.List());
 
-const positive = (n) => n < 0 ? 0 : n;
-
 const findIndex = (items, condition, idx = items.findIndex(condition)) =>
 	idx < 0 ?
 		items.count()

@@ -4,7 +4,8 @@
   "description": "",
   "main": "Array.addons.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint **/*.js"
   },
   "repository": {
     "type": "git",
@@ -18,5 +19,8 @@
   "homepage": "https://github.com/fleidloff/javascript-algorithms#readme",
   "dependencies": {
     "immutable": "^3.8.1"
+  },
+  "devDependencies": {
+    "eslint": "^3.10.0"
   }
 }
