@@ -16,6 +16,11 @@ extends: [
     },
   },
   rules: {
-    strict: 'error',
+    strict: "error",
+    quotes: ["error", "double", { "avoidEscape": true }],
+    "no-console": "off",
+    "no-confusing-arrow": "off",
+    "arrow-parens": ["error", "always"],
+    "no-use-before-define": "off"
   }
 }
