@@ -3,9 +3,9 @@ const { List } = require("extendable-immutable");
 
 class InsertionSort extends List {
 
-    sort = (compare = (a) => (b) => b >= a) =>
+    sort = (compare = (a, b) => b >= a) =>
          this.reduce((memo, item) =>
-            memo.insert(memo.findIndex(compare(item)), item)
+            memo.insert(memo.findIndex((it) => compare(item, it)), item)
         , new List());
 
     findIndex = (condition) => {
