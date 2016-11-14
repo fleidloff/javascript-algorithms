@@ -6,7 +6,7 @@ module.exports = {
       objects: "always-multiline",
       imports: "always-multiline",
       exports: "always-multiline",
-      functions: "always-multiline",
+      functions: "always-multiline"
     }],
 
     // disallow assignment in conditional expressions
@@ -51,7 +51,7 @@ module.exports = {
     "no-extra-parens": ["off", "all", {
       conditionalAssign: true,
       nestedBinaryExpressions: false,
-      returnAssign: false,
+      returnAssign: false
     }],
 
     // disallow unnecessary semicolons
@@ -113,6 +113,6 @@ module.exports = {
 
     // ensure that the results of typeof are compared against a valid string
     // http://eslint.org/docs/rules/valid-typeof
-    "valid-typeof": ["error", { requireStringLiterals: true }],
-  },
+    "valid-typeof": ["error", { requireStringLiterals: true }]
+  }
 };

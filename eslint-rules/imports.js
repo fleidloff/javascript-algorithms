@@ -1,31 +1,31 @@
 module.exports = {
   env: {
-    es6: true,
+    es6: true
   },
   parserOptions: {
     ecmaVersion: 6,
-    sourceType: "module",
+    sourceType: "module"
   },
   plugins: [
-    "import",
+    "import"
   ],
 
   settings: {
     "import/resolver": {
       node: {
-        extensions: [".js", ".json"],
-      },
+        extensions: [".js", ".json"]
+      }
     },
     "import/extensions": [
       ".js",
-      ".jsx",
+      ".jsx"
     ],
     "import/core-modules": [
     ],
     "import/ignore": [
       "node_modules",
-      "\\.(coffee|scss|css|less|hbs|svg|json)$",
-    ],
+      "\\.(coffee|scss|css|less|hbs|svg|json)$"
+    ]
   },
 
   rules: {
@@ -69,7 +69,7 @@ module.exports = {
     // paths are treated both as absolute paths, and relative to process.cwd()
     "import/no-extraneous-dependencies": ["error", {
       devDependencies: ["spec/**", "test/**", "tests/**", "**/__tests__/**"],
-      optionalDependencies: false,
+      optionalDependencies: false
     }],
 
     // Forbid mutable exports
@@ -115,7 +115,7 @@ module.exports = {
     // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/extensions.md
     "import/extensions": ["error", "always", {
       js: "never",
-      jsx: "never",
+      jsx: "never"
     }],
 
     // Enforce a convention in module import order
@@ -123,7 +123,7 @@ module.exports = {
     // TODO: enable?
     "import/order": ["off", {
       groups: ["builtin", "external", "internal", "parent", "sibling", "index"],
-      "newlines-between": "never",
+      "newlines-between": "never"
     }],
 
     // Require a newline after the last import/require in a group
@@ -153,7 +153,7 @@ module.exports = {
     // prevent importing the submodules of other modules
     // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-internal-modules.md
     "import/no-internal-modules": ["off", {
-      allow: [],
+      allow: []
     }],
 
     // Warn if a module could be mistakenly parsed as a script by a consumer
@@ -174,6 +174,6 @@ module.exports = {
 
     // Prevent importing the default as if it were named
     // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-named-default.md
-    "import/no-named-default": "error",
-  },
+    "import/no-named-default": "error"
+  }
 };

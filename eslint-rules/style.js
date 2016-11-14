@@ -36,7 +36,7 @@ module.exports = {
     // assigned
     // http://eslint.org/docs/rules/func-name-matching
     "func-name-matching": ["off", "always", {
-      includeCommonJSModuleExports: false,
+      includeCommonJSModuleExports: false
     }],
 
     // require function expressions to have a name
@@ -71,12 +71,12 @@ module.exports = {
       // },
       FunctionDeclaration: {
         parameters: 1,
-        body: 1,
+        body: 1
       },
       FunctionExpression: {
         parameters: 1,
-        body: 1,
-      },
+        body: 1
+      }
     }],
 
     // specify whether double or single quotes should be used in JSX attributes
@@ -93,8 +93,8 @@ module.exports = {
       overrides: {
         return: { after: true },
         throw: { after: true },
-        case: { after: true },
-      },
+        case: { after: true }
+      }
     }],
 
     // enforce position of line comments
@@ -103,7 +103,7 @@ module.exports = {
     "line-comment-position": ["off", {
       position: "above",
       ignorePattern: "",
-      applyDefaultPatterns: true,
+      applyDefaultPatterns: true
     }],
 
     // disallow mixed 'LF' and 'CRLF' as linebreaks
@@ -117,7 +117,7 @@ module.exports = {
     // http://eslint.org/docs/rules/lines-around-directive
     "lines-around-directive": ["error", {
       before: "always",
-      after: "always",
+      after: "always"
     }],
 
     // specify the maximum depth that blocks can be nested
@@ -130,7 +130,7 @@ module.exports = {
       ignoreComments: false,
       ignoreRegExpLiterals: true,
       ignoreStrings: true,
-      ignoreTemplateLiterals: true,
+      ignoreTemplateLiterals: true
     }],
 
     // specify the max number of lines in a file
@@ -138,7 +138,7 @@ module.exports = {
     "max-lines": ["off", {
       max: 300,
       skipBlankLines: true,
-      skipComments: true,
+      skipComments: true
     }],
 
     // specify the maximum depth callbacks can be nested
@@ -164,7 +164,7 @@ module.exports = {
       newIsCap: true,
       newIsCapExceptions: [],
       capIsNew: false,
-      capIsNewExceptions: ["Immutable.Map", "Immutable.Set", "Immutable.List"],
+      capIsNewExceptions: ["Immutable.Map", "Immutable.Set", "Immutable.List"]
     }],
 
     // disallow the omission of parentheses when invoking a constructor with no arguments
@@ -208,9 +208,9 @@ module.exports = {
         ["&", "|", "^", "~", "<<", ">>", ">>>"],
         ["==", "!=", "===", "!==", ">", ">=", "<", "<="],
         ["&&", "||"],
-        ["in", "instanceof"],
+        ["in", "instanceof"]
       ],
-      allowSamePrecedence: false,
+      allowSamePrecedence: false
     }],
 
     // disallow mixed spaces and tabs for indentation
@@ -240,7 +240,7 @@ module.exports = {
       "ForInStatement",
       "ForOfStatement",
       "LabeledStatement",
-      "WithStatement",
+      "WithStatement"
     ],
 
     // disallow space between function identifier and application
@@ -275,13 +275,13 @@ module.exports = {
     // TODO: enable once https://github.com/eslint/eslint/issues/6488 is resolved
     "object-curly-newline": ["off", {
       ObjectExpression: { minProperties: 0, multiline: true },
-      ObjectPattern: { minProperties: 0, multiline: true },
+      ObjectPattern: { minProperties: 0, multiline: true }
     }],
 
     // enforce "same line" or "multiple line" on object properties.
     // http://eslint.org/docs/rules/object-property-newline
     "object-property-newline": ["error", {
-      allowMultiplePropertiesPerLine: true,
+      allowMultiplePropertiesPerLine: true
     }],
 
     // allow just one var statement per function
@@ -332,7 +332,7 @@ module.exports = {
     "space-before-function-paren": ["error", {
       anonymous: "always",
       named: "never",
-      asyncArrow: "always",
+      asyncArrow: "always"
     }],
 
     // require or disallow spaces inside parentheses
@@ -347,7 +347,7 @@ module.exports = {
       words: true,
       nonwords: false,
       overrides: {
-      },
+      }
     }],
 
     // require or disallow a space immediately following the // or /* in a comment
@@ -355,13 +355,13 @@ module.exports = {
     "spaced-comment": ["error", "always", {
       line: {
         exceptions: ["-", "+"],
-        markers: ["=", "!"], // space here to support sprockets directives
+        markers: ["=", "!"] // space here to support sprockets directives
       },
       block: {
         exceptions: ["-", "+"],
         markers: ["=", "!"], // space here to support sprockets directives
-        balanced: false,
-      },
+        balanced: false
+      }
     }],
 
     // require or disallow the Unicode Byte Order Mark
@@ -369,6 +369,6 @@ module.exports = {
     "unicode-bom": ["error", "never"],
 
     // require regex literals to be wrapped in parentheses
-    "wrap-regex": "off",
-  },
+    "wrap-regex": "off"
+  }
 };

@@ -16,7 +16,7 @@ module.exports = {
     // enforce that class methods use "this"
     // http://eslint.org/docs/rules/class-methods-use-this
     "class-methods-use-this": ["error", {
-      exceptMethods: [],
+      exceptMethods: []
     }],
 
     // require return statements to either always or never specify values
@@ -65,8 +65,8 @@ module.exports = {
       allow: [
         "arrowFunctions",
         "functions",
-        "methods",
-      ],
+        "methods"
+      ]
     }],
 
     // disallow empty destructuring patterns
@@ -107,7 +107,7 @@ module.exports = {
       boolean: false,
       number: true,
       string: true,
-      allow: [],
+      allow: []
     }],
 
     // disallow var and named functions in global scope
@@ -138,7 +138,7 @@ module.exports = {
       ignore: [],
       ignoreArrayIndexes: true,
       enforceConst: true,
-      detectObjects: false,
+      detectObjects: false
     }],
 
     // disallow use of multiple spaces
@@ -179,17 +179,17 @@ module.exports = {
     "no-restricted-properties": ["error", {
       object: "arguments",
       property: "callee",
-      message: "arguments.callee is deprecated",
+      message: "arguments.callee is deprecated"
     }, {
       property: "__defineGetter__",
-      message: "Please use Object.defineProperty instead.",
+      message: "Please use Object.defineProperty instead."
     }, {
       property: "__defineSetter__",
-      message: "Please use Object.defineProperty instead.",
+      message: "Please use Object.defineProperty instead."
     }, {
       object: "Math",
       property: "pow",
-      message: "Use the exponentiation operator (**) instead.",
+      message: "Use the exponentiation operator (**) instead."
     }],
 
     // disallow use of assignment in return statement
@@ -218,7 +218,7 @@ module.exports = {
     // disallow usage of expressions in statement position
     "no-unused-expressions": ["error", {
       allowShortCircuit: false,
-      allowTernary: false,
+      allowTernary: false
     }],
 
     // disallow unused labels
@@ -261,6 +261,6 @@ module.exports = {
     "wrap-iife": ["error", "outside", { functionPrototypeMethods: false }],
 
     // require or disallow Yoda conditions
-    yoda: "error",
-  },
+    yoda: "error"
+  }
 };

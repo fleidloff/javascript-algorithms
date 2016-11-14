@@ -22,6 +22,7 @@ extends: [
     "no-confusing-arrow": "off",
     "arrow-parens": ["error", "always"],
     "no-use-before-define": "off",
-    "no-nested-ternary": "off"
+    "no-nested-ternary": "off",
+    "comma-dangle": ["error", "never"]
   }
 }

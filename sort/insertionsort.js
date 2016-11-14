@@ -1,23 +1,23 @@
 const I = require("immutable");
 
-const InsertionSort = (list, compare = defaultCompare) => 
-    list.reduce((memo, item) => 
+const InsertionSort = (list, compare = defaultCompare) =>
+    list.reduce((memo, item) =>
         memo.insert(
-            findPositiveIndex(memo, (it) => compareToBool(compare(item, it))), 
-            item
+            findPositiveIndex(memo, (it) => compareToBool(compare(item, it))),
+            item,
         )
     , new I.List());
 
 const defaultCompare = (a, b) => b >= a;
 
 const findPositiveIndex = (list, condition) => {
-    const idx = list.findIndex(condition);
-    return idx < 0 ?
+  const idx = list.findIndex(condition);
+  return idx < 0 ?
         list.count() :
         idx;
-}
+};
 
-const compareToBool = (compareResult) => 
+const compareToBool = (compareResult) =>
     typeof compareResult === "boolean" ?
         compareResult :
         compareResult === -1;
