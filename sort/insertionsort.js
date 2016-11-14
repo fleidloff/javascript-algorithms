@@ -16,7 +16,7 @@ function findPositiveIndex(list, condition) {
     return idx < 0 ?
         list.count() :
         idx;
-};
+}
 
 function compareToBool(compareResult) { 
     return typeof compareResult === "boolean" ?
