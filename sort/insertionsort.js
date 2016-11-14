@@ -1,22 +1,28 @@
 const I = require("immutable");
-const { List } = require("extendable-immutable");
 
-class InsertionSort extends List {
 
-    // todo: compare should ideally return -1, 0 or 1. Or true / false. Fix with Number()?
-    sort = (compare = (a, b) => b >= a) =>
-         this.reduce((memo, item) =>
-            memo.insert(memo.findIndex((it) => compare(item, it)), item)
-        , new List());
-
-    findIndex = (condition) => {
-        const idx = this.super.findIndex(condition);
-
-        return idx < 0 ?
-            this.count() :
-            idx;
-    }
-
+function InsertionSort(list, compare = (a, b) => b >= a) {
+    return list.reduce((memo, item) => 
+        memo.insert(
+            findPositiveIndex(memo, (it) => compareToBool(compare(item, it))), 
+            item
+        )
+    , new I.List());
 }
 
-console.log(new InsertionSort([6, 4, 7, 9, 11, -4, 5, 2, 5, 90]).sort());
+function findPositiveIndex(list, condition) {
+    const idx = list.findIndex(condition);
+
+    return idx < 0 ?
+        list.count() :
+        idx;
+};
+
+function compareToBool(compareResult) { 
+    return typeof compareResult === "boolean" ?
+        compareResult :
+        compareResult === -1;
+}
+
+console.log(InsertionSort([6, 4, 7, 9, 11, -4, 5, 2, 5, 90]));
+console.log(InsertionSort("Frederik".split(""), (a, b) => a.toLowerCase().localeCompare(b.toLowerCase())));
