@@ -1,13 +1,20 @@
 const I = require("immutable");
+const { List } = require("extendable-immutable");
 
-const insertionSort = (items) =>
-    items.reduce((memo, item) =>
-        memo.insert(findIndex(memo, (r) => r >= item), item)
-    , new I.List());
+class InsertionSort extends List {
 
-const findIndex = (items, condition, idx = items.findIndex(condition)) =>
-    idx < 0 ?
-        items.count() :
-        idx;
+    sort() {
+        return this.reduce((memo, item) =>
+            memo.insert(memo.findIndex((r) => r >= item), item)
+        , new List());
+    }
 
-console.log(insertionSort(I.fromJS([6, 4, 7, 9, 11, -4, 5, 2, 5, 90])));
+    findIndex(condition) {
+        const idx = super.findIndex(condition);
+        return idx < 0 ?
+            this.count() :
+            idx;
+    }
+}
+
+console.log(new InsertionSort([6, 4, 7, 9, 11, -4, 5, 2, 5, 90]).sort());
