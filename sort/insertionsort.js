@@ -3,13 +3,13 @@ const { List } = require("extendable-immutable");
 
 class InsertionSort extends List {
 
-    sort = () =>
+    sort = (compare = (a) => (b) => b >= a) =>
          this.reduce((memo, item) =>
-            memo.insert(memo.findIndex((r) => r >= item), item)
+            memo.insert(memo.findIndex(compare(item)), item)
         , new List());
 
     findIndex = (condition) => {
-        const idx = this.super.findIndex(condition)
+        const idx = this.super.findIndex(condition);
 
         return idx < 0 ?
             this.count() :
