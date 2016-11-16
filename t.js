@@ -14,6 +14,13 @@ console.log(match(4) `
     * => "none"
 `);
 
-setTimeout(() => {
 
-}, time `1 second`);
+
+const wait = (strings) =>
+    new Promise((resolve, reject) =>
+        setTimeout(resolve, new Number(strings[0]))
+    );
+
+wait `1 second`.then(() => {
+    console.log("foo");
+});
