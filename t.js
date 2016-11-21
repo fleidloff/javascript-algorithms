@@ -17,7 +17,7 @@ console.log(match(4) `
 
 const wait = (strings) =>
     new Promise((resolve, reject) =>
-        setTimeout(resolve, new Number(strings[0]))
+        setTimeout(resolve, Number(strings[0]))
     );
 
 
