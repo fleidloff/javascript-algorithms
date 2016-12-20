@@ -11,7 +11,7 @@ function shuffle(array) {
 const a = [1, 2, 3];
 
 // console.log(JSON.parse(JSON.stringify(shuffle(a))));
-const pipe = (...funs) => (input) => funs.reduce((memo, fun) => typeof fun === "function" ? fun(memo) : fun);
+const pipe = (...funs) => (input) => funs.reduce((memo, fun) => typeof fun === "function" ? fun(memo) : fun, input);
 
 const res = pipe(
   a,
