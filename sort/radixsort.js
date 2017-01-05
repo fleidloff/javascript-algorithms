@@ -9,7 +9,7 @@ const radixSort = (items) =>
         , items);
 
 const nthDigit = (value, n) =>
-    Math.floor((value / (10 ** (n - 1))) % 10);
+    Math.floor((value / Math.pow(10, (n - 1))) % 10);
 
 const longestNumberDigits = (items) =>
     items
