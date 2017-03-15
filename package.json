@@ -18,7 +18,8 @@
   },
   "homepage": "https://github.com/fleidloff/javascript-algorithms#readme",
   "dependencies": {
-    "immutable": "^3.8.1"
+    "immutable": "^3.8.1",
+    "js-pattern-matching": "^0.1.4"
   },
   "devDependencies": {
     "babel-plugin-transform-class-properties": "^6.18.0",

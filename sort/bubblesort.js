@@ -1,11 +1,13 @@
 const Y = require("../Y.js");
 const I = require("immutable");
+const match = require("js-pattern-matching");
 
 
 const bubblesort = Y((items) =>
-    items.rest().isEmpty() ?
-        items :
-        combine(bubble(items)));
+    match(items.rest().isEmpty()) (
+        (v = true) => items,
+        (_) => combine(bubble(items))
+    ));
 
 const combine = (items) =>
     bubblesort(items.butLast()).push(items.last());
